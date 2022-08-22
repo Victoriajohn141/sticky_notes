@@ -12,7 +12,7 @@ h1 {
     margin-left: 20px;
     box-sizing: border-box;
     height: 50px;
-    padding: 5px;
+    padding: 16px;
     border-radius: 10px;
     width: 80%;
     background: white;
@@ -29,21 +29,20 @@ h1 {
     font-size: 22px;
 }
 #app {
-    display: grid;
+    display: list-item;
     grid-template-columns: repeat(auto-fill, 200px);
     padding: 24px;
     gap: 24px;
 }
-.note {
+.note-wrapper {
     background-color: rgb(248, 193, 91);
     height: 200px;
     box-sizing: border-box;
     width: 200px;
-    padding: 16px;
+    /* padding: 16px; */
     border: none;
     box-shadow: 0 0 8px rgb(22, 22, 22);
     border-radius: 10px;
-    resize: none;
     font-family:  Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
 }
@@ -63,22 +62,39 @@ h1 {
 .add-note:hover {
     background: rgb(0, 0, 0, 0.2);
 }
-footer {
-    display: flex;
-    justify-content: space-between;
-    background: rgb(248, 163, 93);
-    height: 100px;
-}
 
 .icon-1 {
     height: 22px;
-    background: none;
-    padding: 0 5px;
+    background: rgb(248, 193, 91);
+    margin-left: 120px;
 }
 .icon-2 {
     height: 22px;
-    background: none;
-    padding: 0 5px;
+    background: rgb(248, 193, 91);
+    margin-left: 15px;
+}
+textarea {
+    background-color: rgb(248, 193, 91);
+    border-radius: 10px;
+    border: none;
+}
+.note {
+    background-color: rgb(248, 193, 91);
+    height: 160px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 200px;
+    padding: 16px;
+    border: none;
+    resize: none;
+    font-family:  Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+.main {
+    background-color: rgb(248, 193, 91);
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
 }
 
 
@@ -105,7 +121,7 @@ footer {
         font-size: 18px;
     }  
 
-    .note {
+    /* .note {
         background-color: rgb(248, 193, 91);
         height: 200px;
         box-sizing: border-box;
@@ -117,7 +133,7 @@ footer {
         resize: none;
         font-family:  Tahoma, Geneva, Verdana, sans-serif;
         font-size: 16px;
-    }
+    } */
 
     .add-note {
         height: 200px;
@@ -130,7 +146,38 @@ footer {
         color: rgb(0, 0, 0, 0.5);
         cursor: pointer;
         transition: background 0.2s;
-        width: 100%;
+        /* width: 100%; */
+    }
+
+    .icon-1 {
+        height: 22px;
+        background: rgb(248, 193, 91);
+        margin-left: 120px;
+    }
+    .icon-2 {
+        height: 22px;
+        background: rgb(248, 193, 91);
+        margin-left: 15px;
+    }
+
+    note {
+        background-color: rgb(248, 193, 91);
+        height: 160px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 200px;
+        padding: 16px;
+        border: none;
+        resize: none;
+        font-family:  Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+    }
+
+    .main {
+        background-color: rgb(248, 193, 91);
+        margin-top: 20px;
+        border-radius: 10px;
+        border: none;
     }
 
     
