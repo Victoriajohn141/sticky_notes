@@ -11,19 +11,27 @@
     <h1>Notes</h1>
     <form action="search">
     <input type="text" id="search-bar" name="bar" placeholder="Search">
-    <button type="submit" class="search-button">Submit</button>
+    <button type="search" class="search-button">Search</button>
     </form>
    <div id="app">
      <button class="add-note" type="button">+</button>
-     <textarea class="note">i want to buy bread</textarea>
-     <textarea class="note"></textarea>
-     <textarea class="note"></textarea>
-     <textarea class="note"></textarea>
+      <div class="note-list">
+        <div class="list-item">
+            <div class="note-updated">Thursday 2:30pm</div>
+        </div>
+      </div>
+  <div id="note-wrapper">
+    <div>
+      <textarea class="note">i want to buy bread</textarea>
+    </div>
+      <div class="action">
+      <button class="action-1"><img class="icon-1" src="./src/icons/edit.png"></button>
+      <button class="action-2"><img class="icon-2" src="./src/icons/bin.png"></button>
    </div>
+  </div>
     <script src="src/main.js"></script>
 </body>
 <footer>
-    <button class="action"><img class="icon-1" src="./src/icons/edit.png">Edit</button>
-    <button class="action-2"><img class="icon-2" src="./src/icons/bin.png">Delete</button>
+   
 </footer>
 </html>
