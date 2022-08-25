@@ -28,8 +28,8 @@ h1 {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     font-size: 22px;
 }
-#app {
-    display: list-item;
+#notes {
+    display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     padding: 24px;
     gap: 24px;
@@ -62,11 +62,15 @@ h1 {
 .add-note:hover {
     background: rgb(0, 0, 0, 0.2);
 }
+.action-1, .action-2 {
+    background: rgb(248, 193, 91);
+    border: none;
+}
 
 .icon-1 {
     height: 22px;
     background: rgb(248, 193, 91);
-    margin-left: 120px;
+    margin-left: 15px;
 }
 .icon-2 {
     height: 22px;
@@ -76,7 +80,7 @@ h1 {
 textarea {
     background-color: rgb(248, 193, 91);
     border-radius: 10px;
-    border: none;
+    behavior: none;
 }
 .note {
     background-color: rgb(248, 193, 91);
@@ -92,9 +96,9 @@ textarea {
 }
 .main {
     background-color: rgb(248, 193, 91);
-    margin-top: 20px;
     border-radius: 10px;
     border: none;
+    margin-bottom: 15px;
 }
 
 
@@ -145,10 +149,14 @@ textarea {
         width: 100%;
     }
 
+    .action-1, .action-2 {
+        background: rgb(248, 193, 91);
+    }
+
     .icon-1 {
         height: 22px;
         background: rgb(248, 193, 91);
-        margin-left: 230px;
+        margin-left: 15px;
     }
     .icon-2 {
         height: 22px;
