@@ -28,8 +28,8 @@ h1 {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     font-size: 22px;
 }
-#notes {
-    display: grid;
+.notes {
+    /* display: grid; */
     grid-template-columns: repeat(auto-fill, 200px);
     padding: 24px;
     gap: 24px;
@@ -37,6 +37,7 @@ h1 {
 .note-wrapper {
     background-color: rgb(248, 193, 91);
     height: 200px;
+    margin-left: 24px;
     box-sizing: border-box;
     width: 200px;
     /* padding: 16px; */
@@ -65,6 +66,7 @@ h1 {
 .action-1, .action-2 {
     background: rgb(248, 193, 91);
     border: none;
+    cursor: pointer;
 }
 
 .icon-1 {
@@ -80,7 +82,6 @@ h1 {
 textarea {
     background-color: rgb(248, 193, 91);
     border-radius: 10px;
-    behavior: none;
 }
 .note {
     background-color: rgb(248, 193, 91);
@@ -94,7 +95,7 @@ textarea {
     font-family:  Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
 }
-.main {
+.first-note {
     background-color: rgb(248, 193, 91);
     border-radius: 10px;
     border: none;
@@ -132,8 +133,6 @@ textarea {
         font-family: Tahoma, Geneva, Verdana, sans-serif;
         font-size: 15px;
     }  
-
-    
 
     .add-note {
         height: 200px;
@@ -187,7 +186,8 @@ textarea {
     }
 
     .note-wrapper {
-        width: 100%;
+        width: 200px;
+        margin-left: 24px;
     }
 
    
