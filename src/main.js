@@ -1,17 +1,21 @@
-const noteContainer = document.getElementById("notes");
-const addNoteButton = noteContainer.querySelector(".add-note")
+"use strict"
 
-function getNotes() {
-  return JSON.parse(localStorage.getItem("stickynotes-notes") || "");    
+function createNewNote() {
+  console.log('Calling function createNewNote')
+const notesContainer = document.querySelector(".notes");
+
+const addNoteButton = notesContainer.querySelector(".add-note");
+
+createNewNote().forEach((note) => {
+  const noteElement = createNoteElement(note.class, note.content);
+  notesContainer.insertBefore(noteElement, addNoteButton);
+});
+
 }
-
-function saveNotes() {
-  localStorage.setItem("stickynotes-notes", JSON.stringify(notes));
-}
-
-function createNoteElement(id, content) {
-
-}
+const noteContainer = document.querySelector(".notes");
+  // const addNoteButton = document.querySelector(".add-note");
+  
+   const noteElement = document.createElement("textarea");
 
 function addNote() {   
 
