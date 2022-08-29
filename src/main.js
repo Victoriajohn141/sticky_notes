@@ -78,6 +78,46 @@ console.log(addNote('i did something today'))
 addNote('testing microphone')
 console.log(noteList)
 
+
+function createNewList(type) {
+    console.log('bread ', type, typeof type)
+    const list = document.createElement('div');
+    const wrapper = document.createElement('div');
+    const divNote = document.createElement('div');
+    const text = document.createElement('textarea');
+    const button1 = document.createElement('button');
+    const button2 = document.createElement('button');
+    const img1 = document.createElement('img');
+    const img2 = document.createElement('img');
+  
+    text.value = type || "";
+    list.className = "note-list";
+    wrapper.className = "note-wrapper";
+    divNote.className = "first-note";
+    text.className = "note";
+    button1.className = "action-1"; 
+    button2.className = "action-2";
+    img1.className = "icon-1"; 
+    img1.src = "./src/icons/edit.png";
+    img2.className = "icon-2"; 
+    img2.src = "./src/icons/bin.png";
+  
+    list.appendChild(wrapper);
+  
+    wrapper.appendChild(divNote);
+  
+    divNote.appendChild(text);
+    divNote.appendChild(button1);
+    divNote.appendChild(button2);
+  
+    button1.appendChild(img1);
+    button2.appendChild(img2);
+
+    return list
+
+}
+
+
 function renderApp() {
 /*
 <div class="note-list">
@@ -89,48 +129,37 @@ function renderApp() {
       </div>
    </div>
 */
-  const list = document.createElement('div');
-  const wrapper = document.createElement('div');
-  const divNote = document.createElement('div');
-  const text = document.createElement('textarea');
-  const button1 = document.createElement('button');
-  const button2 = document.createElement('button');
-  const img1 = document.createElement('img');
-  const img2 = document.createElement('img');
-
-  list.className = "note-list";
-  wrapper.className = "note-wrapper";
-  divNote.className = "first-note";
-  text.className = "note";
-  button1.className = "action-1"; 
-  button2.className = "action-2";
-  img1.className = "icon-1"; 
-  img1.src = "./src/icons/edit.png";
-  img2.className = "icon-2"; 
-  img2.src = "./src/icons/bin.png";
-
-  list.appendChild(wrapper);
-
-  wrapper.appendChild(divNote);
-
-  divNote.appendChild(text);
-  divNote.appendChild(button1);
-  divNote.appendChild(button2);
-
-  button1.appendChild(img1);
-  button2.appendChild(img2);
+ 
 
 
-  console.log(list)
+//   console.log(list)
 
   const app = document.querySelector("#app")
 
+  // loop over noteList
+  noteList.forEach(item => {
+
+    console.log(item)
+   const list = createNewList(item.text)
+
+    app.appendChild(list)
+  })
+
+
+ // create list item
+  // set text in ui to text of list
+  // append to app
+
+  
+
 //   console.log(app)
 
-  app.appendChild(list)
+  
 
-  return list
+  return
 
 }
 
 renderApp()
+
+
