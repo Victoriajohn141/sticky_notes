@@ -34,12 +34,15 @@ console.log(createNewNoteV2('another note'))
 
 
 // addNote takes in string, creates a note then adds it into the note container
-function addNote(value) {   
+function addNote(value) {  
+console.log("adding note") 
  // 1. create note data structure from value (input parameter)
  // 2. add it to the noteList
  let addNote = createNewNoteV2(value);
  noteList.push(addNote)
 
+ console.log(noteList)
+ return addNote
 
 }
 
@@ -78,6 +81,8 @@ console.log(addNote('i did something today'))
 addNote('testing microphone')
 console.log(noteList)
 
+// ui funcyions
+
 
 function createNewList(type) {
     console.log('bread ', type, typeof type)
@@ -101,6 +106,8 @@ function createNewList(type) {
     img1.src = "./src/icons/edit.png";
     img2.className = "icon-2"; 
     img2.src = "./src/icons/bin.png";
+    img2.title = "click to delete"
+    text.placeholder = 'enter text';
   
     list.appendChild(wrapper);
   
@@ -157,6 +164,17 @@ function renderApp() {
   
 
   return
+
+}
+
+function addNoteButtonEvent() {
+    let newNote = addNote("");
+    console.log(newNote)
+
+
+    const list = createNewList(newNote.text)
+    
+    app.appendChild(list)
 
 }
 
