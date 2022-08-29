@@ -33,20 +33,13 @@ console.log(createNewNoteV2('another note'))
 
 
 
-
-
-// const noteContainer = document.querySelector(".notes");
-//   // const addNoteButton = document.querySelector(".add-note");
-  
-//    const noteElement = document.createElement("textarea");
-
 // addNote takes in string, creates a note then adds it into the note container
 function addNote(value) {   
  // 1. create note data structure from value (input parameter)
  // 2. add it to the noteList
  let addNote = createNewNoteV2(value);
  noteList.push(addNote)
- 
+
 
 }
 
@@ -79,16 +72,65 @@ function deleteNote(index) {
 
 deleteNote(0)
 console.log(noteList)
-// console.log('Calling function createNewNote')
-// const notesContainer = document.querySelector(".notes");
 
-// const addNoteButton = notesContainer.querySelector(".add-note");
-
-// createNewNote().forEach((note) => {
-//   const noteElement = createNoteElement(note.class, note.content);
-//   notesContainer.insertBefore(noteElement, addNoteButton);
-// });
 
 console.log(addNote('i did something today'))
 addNote('testing microphone')
 console.log(noteList)
+
+function renderApp() {
+/*
+<div class="note-list">
+    <div class="note-wrapper">
+      <div class="first-note">
+         <textarea class="note">i want to buy bread</textarea>
+         <button class="action-1"><img class="icon-1" src="./src/icons/edit.png"></button>
+         <button class="action-2"><img class="icon-2" src="./src/icons/bin.png"></button>
+      </div>
+   </div>
+*/
+  const list = document.createElement('div');
+  const wrapper = document.createElement('div');
+  const divNote = document.createElement('div');
+  const text = document.createElement('textarea');
+  const button1 = document.createElement('button');
+  const button2 = document.createElement('button');
+  const img1 = document.createElement('img');
+  const img2 = document.createElement('img');
+
+  list.className = "note-list";
+  wrapper.className = "note-wrapper";
+  divNote.className = "first-note";
+  text.className = "note";
+  button1.className = "action-1"; 
+  button2.className = "action-2";
+  img1.className = "icon-1"; 
+  img1.src = "./src/icons/edit.png";
+  img2.className = "icon-2"; 
+  img2.src = "./src/icons/bin.png";
+
+  list.appendChild(wrapper);
+
+  wrapper.appendChild(divNote);
+
+  divNote.appendChild(text);
+  divNote.appendChild(button1);
+  divNote.appendChild(button2);
+
+  button1.appendChild(img1);
+  button2.appendChild(img2);
+
+
+  console.log(list)
+
+  const app = document.querySelector("#app")
+
+//   console.log(app)
+
+  app.appendChild(list)
+
+  return list
+
+}
+
+renderApp()
