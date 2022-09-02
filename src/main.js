@@ -74,12 +74,12 @@ function deleteNote(index) {
 }
 
 deleteNote(0)
-console.log(noteList)
+// console.log(noteList)
 
 
-console.log(addNote('i did something today'))
-addNote('testing microphone')
-console.log(noteList)
+// console.log(addNote(''))
+// addNote('')
+// console.log(noteList)
 
 // ui funcyions
 
@@ -144,13 +144,26 @@ function renderApp() {
   const app = document.querySelector("#app")
 
   // loop over noteList
-  noteList.forEach(item => {
+  for (let i = 0; i < noteList.length; i++) {
 
-    console.log(item)
-   const list = createNewList(item.text)
+    let item = noteList[i];
+
+    const list = createNewList(item.text)
 
     app.appendChild(list)
-  })
+
+  }
+  
+  
+
+
+  // noteList.forEach(item => {
+
+  //   console.log(item)
+  //  const list = createNewList(item.text)
+
+  //   app.appendChild(list)
+  // })
 
 
  // create list item
