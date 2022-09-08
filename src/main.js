@@ -143,7 +143,7 @@ function renderApp() {
 
   const app = document.querySelector("#app")
 
-  // loop over noteList
+  // loop over noteListlo
   for (let i = 0; i < noteList.length; i++) {
 
     let item = noteList[i];
