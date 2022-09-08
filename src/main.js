@@ -68,6 +68,7 @@ console.log(noteList)
 function deleteNote(index) {
 
  let removeItem = noteList.splice(index, 1)
+ 
 
  console.log('removed: ', removeItem)
 
@@ -84,7 +85,7 @@ deleteNote(0)
 // ui funcyions
 
 
-function createNewList(type) {
+function createNewList(type, index) {
     console.log('bread ', type, typeof type)
     const list = document.createElement('div');
     const wrapper = document.createElement('div');
@@ -108,6 +109,14 @@ function createNewList(type) {
     img2.src = "./src/icons/bin.png";
     img2.title = "click to delete"
     text.placeholder = 'enter text';
+
+    // const buttonTwo= document.querySelector(".action-2")
+    button2.addEventListener('click', function () {
+     
+      deleteNote(index)
+
+      console.log('button clicked')
+    })
   
     list.appendChild(wrapper);
   
@@ -121,6 +130,8 @@ function createNewList(type) {
     button2.appendChild(img2);
 
     return list
+
+    
 
 }
 
@@ -194,3 +205,4 @@ function addNoteButtonEvent() {
 renderApp()
 
 
+// button2.addEventListener('click', function () {})
