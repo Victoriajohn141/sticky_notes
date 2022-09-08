@@ -144,9 +144,9 @@ function renderApp() {
   const app = document.querySelector("#app")
 
   // loop over noteList
-  for (let i = 0; i < noteList.length; i++) {
+  for (let i = 0; i < note-wrapper.length; i++) {
 
-    let item = noteList[i];
+    let item = note-wrapper[i];
 
     const list = createNewList(item.text)
 
