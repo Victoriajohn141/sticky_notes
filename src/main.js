@@ -68,7 +68,7 @@ console.log(noteList)
 function deleteNote(index) {
 
  let removeItem = noteList.splice(index, 1)
- 
+ removeItem
 
  console.log('removed: ', removeItem)
 
@@ -87,6 +87,9 @@ deleteNote(0)
 
 function createNewList(type, index) {
     console.log('bread ', type, typeof type)
+
+    console.log('debugging passing index into createNewList function: ', index, typeof index)
+
     const list = document.createElement('div');
     const wrapper = document.createElement('div');
     const divNote = document.createElement('div');
@@ -116,6 +119,9 @@ function createNewList(type, index) {
       deleteNote(index)
 
       console.log('button clicked')
+
+      list.remove();
+
     })
   
     list.appendChild(wrapper);
@@ -159,7 +165,9 @@ function renderApp() {
 
     let item = noteList[i];
 
-    const list = createNewList(item.text)
+    const list = createNewList(item.text, i)
+
+    console.log('item from array is: ', item)
 
     app.appendChild(list)
 
@@ -193,10 +201,10 @@ function renderApp() {
 
 function addNoteButtonEvent() {
     let newNote = addNote("");
-    console.log(newNote)
 
+    const list = createNewList(newNote.text,0)
 
-    const list = createNewList(newNote.text)
+    console.log(list)
     
     app.appendChild(list)
 
