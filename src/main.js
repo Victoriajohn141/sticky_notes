@@ -75,15 +75,8 @@ function deleteNote(index) {
 }
 
 deleteNote(0)
-// console.log(noteList)
-
-
-// console.log(addNote(''))
-// addNote('')
-// console.log(noteList)
 
 // ui funcyions
-
 
 function createNewList(type, index) {
     console.log('bread ', type, typeof type)
@@ -143,20 +136,6 @@ function createNewList(type, index) {
 
 
 function renderApp() {
-/*
-<div class="note-list">
-    <div class="note-wrapper">
-      <div class="first-note">
-         <textarea class="note">i want to buy bread</textarea>
-         <button class="action-1"><img class="icon-1" src="./src/icons/edit.png"></button>
-         <button class="action-2"><img class="icon-2" src="./src/icons/bin.png"></button>
-      </div>
-   </div>
-*/
- 
-
-
-//   console.log(list)
 
   const app = document.querySelector("#app")
 
@@ -172,28 +151,11 @@ function renderApp() {
     app.appendChild(list)
 
   }
-  
-  
-
-
-  // noteList.forEach(item => {
-
-  //   console.log(item)
-  //  const list = createNewList(item.text)
-
-  //   app.appendChild(list)
-  // })
 
 
  // create list item
   // set text in ui to text of list
   // append to app
-
-  
-
-//   console.log(app)
-
-  
 
   return
 
@@ -213,4 +175,34 @@ function addNoteButtonEvent() {
 renderApp()
 
 
-// button2.addEventListener('click', function () {})
+function searchNote(query) {
+
+  console.log('staert', noteList)
+  const matched = [];
+  // go thrpugh everything in  noteList
+  for (let i = 0; i < noteList.length; i++) {
+    console.log('debugging loop ', noteList[i], noteList[i].text)
+    // check if it mactches
+    if((noteList[i].text || '').includes(query)) {
+      console.log('we matched ', noteList[i].text)
+      matched.push(noteList[i])
+      // if it does; keep it aside
+    }
+     else {
+      console.log('not found ', noteList[i].text)
+     }
+    
+  }
+  
+  // return items that matched
+  console.log('end', noteList)
+
+  return matched
+}
+
+
+
+// console.log(addNote('new note')) // {text: 'new note'}
+// console.log(addNote('another note'))
+
+// console.log('Result of searching: ', searchNote('note'));
